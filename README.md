@@ -1,38 +1,48 @@
-# Car Parking Management System
+📚 Library Management System (C++)
+Description
+This is a simple console-based Library Management System written in C++. It allows users to register, log in, view available books, search for a specific book, borrow books, and return them. It includes a fine system for late returns.
 
-## Introduction
+Features
+User Registration (dummy, not stored)
 
-The Car Parking Management System is a C++-based console application designed to simulate the operations of a small parking lot using object-oriented programming principles. This project was developed as part of an academic assignment to demonstrate the practical application of key data structures such as stacks, queues, and linked lists.
+User Login (only works with hardcoded credentials: Hasaan, 123)
 
-## Objective
+Display all available books
 
-The primary objective of this project is to manage the inflow and outflow of cars in a parking facility with limited space, efficiently handling scenarios like entry queue overflow and full parking floors. The system aims to allocate parking slots dynamically and ensure no data is lost, even during congestion.
+Search for books by title, author, or ISBN
 
-## Features
+Borrow books (decreases stock)
 
-- **Entry Queue**: A circular queue holds cars waiting to be parked.
-- **Parking Floors**: Two parking floors represented by stack structures simulate LIFO parking behavior.
-- **Overflow Waitlist**: When both floors and the entry queue are full, a singly linked list stores car numbers that are waiting for a slot.
-- **Dynamic Parking Records**: The `ParkingDetails` class dynamically maintains a list of each car's parked floor and position.
-- **User Menu**: Interactive console menu allows users to enqueue cars, park them, remove parked cars, and display the current status.
+Return books (increases stock)
 
-## Technical Details
+Includes a fine of Rs. 500 for late returns
 
-- **Language**: C++
-- **Data Structures**:
-  - **Stack**: Used for each parking floor.
-  - **Circular Queue**: Manages car entry queue.
-  - **Singly Linked List**: Handles the overflow waitlist.
-  - **Dynamic Array**: Stores real-time parking data.
-- **Functions**:
-  - `enqueue()`, `dequeue()` for managing the entry queue.
-  - `push()`, `pop()` for parking and removing cars from floors.
-  - `addToWaitlist()`, `removeFromWaitlist()` for overflow handling.
+How It Works
+1. Startup
+The program displays a logo.
 
-## Compilation and Execution
+Users are prompted to register or log in.
 
-To compile and run the project:
+2. Authentication
+Registration: Asks for a name and password (not stored or used).
 
-```bash
-g++ car_parking.cpp -o car_parking
-./car_parking
+Login:
+
+Username: Hasaan
+
+Password: 123
+
+Only these credentials allow access to the main menu.
+
+3. Main Menu (after login)
+Options include:
+
+View all books: Displays book details (title, author, ISBN, stock).
+
+Search for books: Search by title, author, or ISBN.
+
+Borrow books: Reduces the book stock by 1.
+
+Return books: Increases stock. A fine is applied if returned after day 12.
+
+Exit: Terminates the program.
